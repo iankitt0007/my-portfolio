@@ -1,9 +1,9 @@
-import Experience from '../components/Experience';
-import Footer from '../components/Footer';
+import Experience from "../components/Experience";
+import Footer from "../components/Footer";
 
 const ExperiencePage = () => {
   return (
-    <div>
+    <div className="container">
       <Experience />
       <Footer />
     </div>

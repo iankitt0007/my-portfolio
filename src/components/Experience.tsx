@@ -1,26 +1,72 @@
 // components/Experience.tsx
+import { FaArrowLeft } from "react-icons/fa";
+import { useRouter } from "next/router";
+
 const Experience: React.FC = () => {
-    return (
-      <section className="experience py-16 px-4">
-        <h2 className="text-3xl font-bold text-center mb-6">Experience</h2>
-        <div className="experience-item mb-6">
-          <h3 className="text-xl font-semibold">Software Engineer at Signity Software Solutions Pvt. Ltd.</h3>
-          <p>Feb 2024 - Present</p>
-          <p className="mt-2">Currently working as a Software Engineer. Focused on developing scalable software solutions using modern technologies.</p>
-        </div>
-        <div className="experience-item mb-6">
-          <h3 className="text-xl font-semibold">AWS Training at Mapping Skills Technology Pvt. Ltd.</h3>
-          <p>Aug 2023 - Sep 2023</p>
-          <p className="mt-2">Trained in AWS services like EC2, S3, Lambda, and DynamoDB.</p>
-        </div>
-        <div className="experience-item">
-          <h3 className="text-xl font-semibold">Cloud Bootcamp on GCP at Geeks for Geeks</h3>
-          <p>Aug 2023 - Oct 2023</p>
-          <p className="mt-2">Completed training on Google Cloud Platform, including services like Virtual Machines, Cloud Storage, IAM, and Cloud Monitoring.</p>
-        </div>
-      </section>
-    );
+  const router = useRouter();
+
+  const handleBackClick = () => {
+    router.push("/");
   };
-  
-  export default Experience;
-  
+
+  return (
+    <section className="experience py-20 px-6 bg-gradient-to-r from-indigo-400 to-purple-500 text-white animate-fade-in">
+      {/* Back Button Icon */}
+      <button
+        onClick={handleBackClick}
+        className="back-button-icon absolute top-6 left-6 p-3 rounded-full bg-white text-indigo-600 hover:bg-indigo-600 hover:text-white transition-all duration-300"
+      >
+        <FaArrowLeft className="w-6 h-6" />
+      </button>
+
+      <h2 className="text-4xl font-bold text-center mb-8 text-shadow-lg animate-slide-up">
+        Experience
+      </h2>
+      <p className="text-lg max-w-2xl mx-auto mb-8 text-center leading-relaxed animate-fade-in animate-delay-200">
+        Here are some of the notable roles and experiences that have shaped my
+        career in the tech industry.
+      </p>
+
+      <div className="experience-list animate-fade-in animate-delay-400">
+        {/* Experience Card 1 */}
+        <div className="experience-item">
+          <div>
+            <h3 className="experience-title">Software Engineer</h3>
+            <p className="experience-date">2020 - Present</p>
+            <p className="experience-description">
+              Working at XYZ Company, where I design and develop scalable
+              applications, ensuring performance and maintainability while
+              mentoring junior developers.
+            </p>
+          </div>
+        </div>
+
+        {/* Experience Card 2 */}
+        <div className="experience-item">
+          <div>
+            <h3 className="experience-title">Frontend Developer</h3>
+            <p className="experience-date">2018 - 2020</p>
+            <p className="experience-description">
+              Focused on creating user-friendly interfaces using React.js,
+              Redux, and Tailwind CSS at ABC Tech.
+            </p>
+          </div>
+        </div>
+
+        {/* Experience Card 3 */}
+        <div className="experience-item">
+          <div>
+            <h3 className="experience-title">Intern - Web Development</h3>
+            <p className="experience-date">2017 - 2018</p>
+            <p className="experience-description">
+              Built and maintained web applications using HTML, CSS, JavaScript,
+              and PHP, while gaining hands-on experience in real-world projects.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Experience;
