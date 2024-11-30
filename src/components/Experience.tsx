@@ -34,7 +34,7 @@ const Experience: React.FC = () => {
             <h3 className="experience-title">Software Engineer</h3>
             <p className="experience-date">2020 - Present</p>
             <p className="experience-description">
-              Working at XYZ Company, where I design and develop scalable
+              Working at Signity Software Solutions Company, where I design and develop scalable
               applications, ensuring performance and maintainability while
               mentoring junior developers.
             </p>

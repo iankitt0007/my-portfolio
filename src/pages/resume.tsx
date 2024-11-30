@@ -3,7 +3,7 @@ import Footer from '../components/Footer';
 
 const ResumePage = () => {
   return (
-    <div>
+    <div className='container'>
       <Resume />
       <Footer />
     </div>

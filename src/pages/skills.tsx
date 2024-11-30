@@ -3,7 +3,7 @@ import Footer from '../components/Footer';
 
 const SkillsPage = () => {
   return (
-    <div>
+    <div className='container'>
       <Skills />
       <Footer />
     </div>
