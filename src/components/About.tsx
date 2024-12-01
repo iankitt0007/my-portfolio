@@ -28,7 +28,27 @@ const About: React.FC = () => {
       <h2 className="text-4xl font-bold text-center mb-8 text-shadow-lg animate-slide-up">
         About Me
       </h2>
-      <p className="text-lg max-w-2xl mx-auto mb-8 text-center leading-relaxed animate-fade-in animate-delay-200">
+      {/* Profile Card */}
+      <div className="profile-card-container">
+        <div className="flip-card">
+          <div className="flip-card-inner">
+            {/* Front Side */}
+            <div className="flip-card-front">
+              <img src="/assets/profile.jpg" alt="Profile Picture 1" />
+            </div>
+
+            {/* Back Side */}
+            <div className="flip-card-back">
+              <img src="/assets/profile.jpg" alt="Profile Picture 2" />
+              <p className="text-lg font-semibold">Ankit Sirswa</p>
+              {/* <p className="text-sm px-4">
+                Software Engineer specializing in scalable solutions and cloud technologies.
+              </p> */}
+            </div>
+          </div>
+        </div>
+      </div>
+      <p className="description-text-lg">
         I'm Ankit Sirswa, a Software Engineer with a passion for creating
         scalable software solutions and AI technologies. I have experience
         working with cloud platforms like AWS, GCP, and Azure, and have
@@ -36,8 +56,8 @@ const About: React.FC = () => {
         JavaScript, TypeScript, React.js, Node.js, and more.
       </p>
 
-      <div className="contact-info flex justify-center space-x-8 mt-8 animate-fade-in animate-delay-400">
-        <p className="text-lg flex items-center space-x-3">
+      <div className="contact-info">
+        <p className="email-text-lg">
           <FaEnvelope className="w-5 h-5 text-teal-200" />
           <a
             href="mailto:iankitt0007@gmail.com"
@@ -46,11 +66,11 @@ const About: React.FC = () => {
             iankitt0007@gmail.com
           </a>
         </p>
-        <p className="text-lg flex items-center space-x-3">
+        <p className="mob-number-text-lg">
           <FaPhoneAlt className="w-5 h-5 text-teal-200" />
           <span className="font-medium">+91 931-538-2020</span>
         </p>
-        <p className="text-lg flex items-center space-x-3">
+        <p className="linkedin-text-lg">
           <FaLinkedin className="w-5 h-5 text-teal-200" />
           <a
             href="https://linkedin.com/in/iankitt0007"
@@ -64,7 +84,7 @@ const About: React.FC = () => {
       </div>
 
       {/* Google Map for Address */}
-      <div className="map-container mt-12 w-full h-80 bg-white rounded-lg overflow-hidden shadow-lg">
+      <div className="map-container">
         <iframe
           src="https://www.google.com/maps/embed/v1/place?q=Fatehabad,+Haryana,+India&key=YOUR_GOOGLE_MAPS_API_KEY"
           width="100%"

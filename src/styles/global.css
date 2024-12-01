@@ -313,6 +313,101 @@
   margin-right: auto;
 }
 
+/* Contact Info Container */
+/* Contact Info Container */
+.contact-info {
+  display: flex;
+  justify-self:center;
+  flex-direction: column; /* Stack items vertically */
+  align-items: flex-start; /* Align items to the left */
+  gap: 1rem; /* Reduced space between each contact item */
+  margin-top: 2rem; /* Adds spacing above the section */
+  padding: 1.5rem 1rem; /* Added padding to ensure text isn't too close to edges */
+  max-width: 400px; /* Limits the width for a more compact look */
+  width: 100%; /* Ensures full width on smaller screens */
+  border-radius: 1rem; /* Rounded edges */
+  background: rgb(255 255 255 / 54%); /* Slightly transparent background */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+  backdrop-filter: blur(10px); /* Optional, adds a soft blur effect behind the card */
+}
+
+.contact-info:hover {
+  transform: translateY(-5px); /* Slight lift effect */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* Enhance shadow on hover */
+}
+
+/* Contact Item Styling */
+.contact-info p {
+  display: flex;
+  align-items: center; /* Vertically align icons and text */
+  gap: 1rem; /* Slightly more space between icon and text */
+  font-size: 1rem; /* Standard readable size */
+  color: #2b6e6e; /* Slightly darker teal for contrast */
+  font-weight: 500; /* Semi-bold for readability */
+  transition: color 0.3s ease; /* Smooth color change */
+}
+
+.contact-info p:hover {
+  color: #2c7a7b; /* Darker teal on hover */
+}
+
+.contact-info p a {
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Match parent text color */
+  transition: color 0.3s ease; /* Smooth hover effect */
+}
+
+.contact-info p a:hover {
+  color: #285e61; /* Darker teal on hover */
+}
+
+/* Icon Styling */
+.contact-info p svg {
+  flex-shrink: 0; /* Prevent icon from shrinking */
+  width: 1.5rem; /* Standardized icon size */
+  height: 1.5rem;
+  color: #319795; /* Match text color */
+  transition: transform 0.3s ease, color 0.3s ease; /* Smooth interaction */
+}
+
+.contact-info p:hover svg {
+  transform: scale(1.1); /* Slight grow effect */
+  color: #2c7a7b; /* Slightly darker on hover */
+}
+
+
+/* Description Text */
+.description-text-lg {
+  font-size: 1.125rem; /* Larger font size for readability */
+  max-width: 900px; /* Limits width for a better layout */
+  margin: 0 auto; /* Centers the text */
+  line-height: 1.75; /* Makes the text easier to read */
+  text-align: center; /* Centers the paragraph */
+  color: #f5f5f5; /* Light color for contrast */
+  padding: 0 1.5rem; /* Adds padding on the sides for better readability */
+  transition: transform 0.3s ease; /* Smooth transformation */
+}
+
+.description-text-lg:hover {
+  transform: scale(1.02); /* Slight zoom effect on hover */
+}
+
+/* Map Container */
+.map-container {
+  margin-top: 2rem; /* Adds space above the map */
+  border-radius: 0.75rem; /* Rounded corners for a smoother appearance */
+  overflow: hidden; /* Ensures the map doesn't spill out of the container */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.map-container iframe {
+  width: 100%; /* Full width for the iframe */
+  height: 400px; /* Set the height of the map */
+  border: none; /* Remove iframe border */
+  border-radius: 0.75rem; /* Smooth the edges of the iframe */
+}
+
 /* ---------------------- Contact Section ------------------------- */
 .contact-info p {
   font-size: 1.125rem;
@@ -907,4 +1002,106 @@
   font-size: 1.2rem;
   line-height: 1.6;
   animation: slideInFromRight 1s ease-in-out;
+}
+
+/* Profile Card Container */
+.profile-card-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem; /* Adds space below */
+}
+
+/* Flip Card */
+.flip-card {
+  width: 12rem; /* Smaller size */
+  height: 16rem; /* Taller for better proportions */
+  border-radius: 1rem; /* Smooth rounded corners */
+  background: white;
+  overflow: hidden; /* Ensures content stays inside rounded edges */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Soft shadow for depth */
+  position: relative;
+  transition: transform 0.4s ease, box-shadow 0.4s ease; /* Smooth hover effect */
+}
+
+.flip-card:hover {
+  transform: translateY(-10px); /* Gentle hover lift */
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+}
+
+/* Card Inner */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease; /* Smooth flip animation */
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg); /* Flip the card */
+}
+
+/* Front and Back Faces */
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; /* Hides the other side */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  border-radius: 1rem; /* Matches card rounding */
+}
+
+/* Front Face */
+.flip-card-front {
+  background-color: #f4f4f4; /* Soft neutral background */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.flip-card-front img {
+  width: 80%;
+  height: auto;
+  border-radius: 0.75rem; /* Smooth image rounding */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: transform 0.3s ease; /* Smooth scaling */
+}
+
+.flip-card:hover .flip-card-front img {
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* Back Face */
+.flip-card-back {
+  background-color: #319795; /* Clean teal color */
+  color: white;
+  text-align: center;
+  transform: rotateY(180deg); /* Flips back face */
+  padding: 1rem 0.5rem;
+}
+
+.flip-card-back img {
+  width: 4rem; /* Circular image for avatar */
+  height: 4rem;
+  border-radius: 50%; /* Fully rounded */
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Depth for avatar */
+}
+
+.flip-card-back .profile-name {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.flip-card-back .profile-description {
+  font-size: 0.85rem;
+  line-height: 1.4;
 }
