@@ -4,6 +4,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 .container {
   display: flex;
   flex-direction: column;
@@ -22,7 +23,7 @@
   max-width: 1200px;
 }
 
-/* Hero Section */
+/* ----------------------- Hero Section ------------------- */
 .hero {
   position: relative;
   padding: 2rem 1rem;
@@ -102,7 +103,7 @@
   background: #fb7185;
 }
 
-/* Footer Section */
+/* ---------------------- Footer Section --------------------- */
 .footer {
   position: relative;
   padding: 2.5rem 1rem;
@@ -158,7 +159,7 @@
   }
 }
 
-/* Main Header Section */
+/* ----------------------- Main Header Section -------------------- */
 .main-header {
   padding: 2rem 1rem;
   background: linear-gradient(
@@ -264,7 +265,7 @@
   }
 }
 
-/* Positioning and styling for the back button icon */
+/* ----------- Positioning and styling for the back button icon on About Section ------------- */
 .back-button-icon {
   position: absolute;
   top: 1.5rem; /* Adjust the top spacing */
@@ -282,6 +283,7 @@
   color: white; /* Change icon color to white when hovered */
 }
 
+/* -------------- About Section ----------------- */
 .about {
   position: relative; /* Ensure the back button stays in place */
   padding: 4rem 2rem;
@@ -311,6 +313,7 @@
   margin-right: auto;
 }
 
+/* ---------------------- Contact Section ------------------------- */
 .contact-info p {
   font-size: 1.125rem;
   margin-bottom: 1rem;
@@ -401,6 +404,7 @@
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+/* ---------------------- Experience Section ---------------------- */
 .experience {
   position: relative;
   padding: 4rem 2rem;
@@ -522,7 +526,7 @@
   }
 }
 
-/* Back button styles */
+/* ----------------- Back button styles for Experience page -------------- */
 .back-button-icon {
   position: absolute;
   top: 1.5rem;
@@ -540,11 +544,15 @@
   color: white; /* White icon on hover */
 }
 
-/* Skills Section Styles */
+/* ------------------------ Skills Section ----------------------- */
 .skills-section {
   position: relative;
   padding: 4rem 2rem;
-  background: linear-gradient(to right, #38a169, #4299e1); /* Green to blue gradient */
+  background: linear-gradient(
+    to right,
+    #38a169,
+    #4299e1
+  ); /* Green to blue gradient */
   color: white;
   text-align: center;
 }
@@ -559,7 +567,10 @@
 /* Skill Item Styles */
 .skills-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid */
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(200px, 1fr)
+  ); /* Responsive grid */
   gap: 1.5rem;
 }
 
@@ -630,6 +641,7 @@
   }
 }
 
+/* ------------------------ Project Section -------------------------- */
 .projects {
   position: relative;
   padding: 4rem 2rem;
@@ -748,4 +760,151 @@
     left: 1rem;
     padding: 0.5rem;
   }
+}
+
+/* ----------------------- Contact Section ----------------------- */
+.contact-section {
+  background: linear-gradient(135deg, #1e90ff, #00bfff);
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+.contact-container {
+  max-width: 600px;
+  margin: 0 auto;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.contact-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  animation: slideInFromLeft 1s ease-in-out;
+}
+
+.contact-description {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  animation: slideInFromRight 1s ease-in-out;
+}
+
+.contact-link {
+  color: #ffeb3b;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-link:hover {
+  color: #ffd700;
+  transform: scale(1.1);
+}
+
+/* Background Animation */
+.contact-section::before {
+  content: "";
+  position: absolute;
+  top: -100px;
+  left: -100px;
+  width: 300px;
+  height: 300px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  animation: float 6s infinite;
+}
+
+.contact-section::after {
+  content: "";
+  position: absolute;
+  bottom: -100px;
+  right: -100px;
+  width: 400px;
+  height: 400px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  animation: floatReverse 8s infinite;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(20px, 20px);
+  }
+}
+
+@keyframes floatReverse {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-20px, -20px);
+  }
+}
+
+/* -------------- Resume Section --------------- */
+.resume-section {
+  background: linear-gradient(135deg, #1e90ff, #00bfff);
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+.resume-container {
+  max-width: 600px;
+  margin: 0 auto;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.resume-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  animation: slideInFromBottom 1s ease-in-out;
+}
+
+.resume-description {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  animation: slideInFromRight 1s ease-in-out;
 }

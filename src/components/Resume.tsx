@@ -1,19 +1,35 @@
+import React from "react";
+import { FaArrowLeft } from "react-icons/fa";
+import { useRouter } from "next/router";
+
 const Resume: React.FC = () => {
-    return (
-      <section id="resume" className="py-16">
-        <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold mb-6 text-center">Resume</h2>
-          <a
-            href="/resume.pdf"
-            download
-            className="px-6 py-3 bg-blue-600 text-white font-bold rounded-lg block text-center"
-          >
-            Download Resume
-          </a>
-        </div>
-      </section>
-    );
+  const router = useRouter();
+
+  const handleBackClick = () => {
+    router.push("/");
   };
-  
-  export default Resume;
-  
+
+  return (
+    <section className="resume-section">
+      <div className="resume-container">
+        {/* Back Button Icon */}
+        <button
+          onClick={handleBackClick}
+          className="back-button-icon absolute top-6 left-6 p-3 rounded-full bg-white text-indigo-600 hover:bg-indigo-600 hover:text-white transition-all duration-300"
+        >
+          <FaArrowLeft className="w-6 h-6" />
+        </button>
+        <h2 className="resume-title">Resume</h2>
+        <a
+          href="C:\Users\Ankit\Downloads\My Resume (1) (1).pdf"
+          download
+          className="px-6 py-3 bg-blue-600 text-white font-bold rounded-lg block text-center"
+        >
+          Download
+        </a>
+      </div>
+    </section>
+  );
+};
+
+export default Resume;
